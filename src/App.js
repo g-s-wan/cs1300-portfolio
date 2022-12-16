@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import ReactDOM from "react-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Personas from "./pages/Personas";
+import Redesign from "./pages/Redesign";
+import IterativeDesign from "./pages/IterativeDesign";
+import CameraGeometry from "./pages/CameraGeometry";
+import Layout from "./Layout"
+import About from "./pages/About";
+import ScrollToTop from "./ScrollToTop"
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/personas" element={<Personas />} />
+          <Route path="/iterative-design" element={<IterativeDesign />} />
+          <Route path="/camera-geometry" element={<CameraGeometry />} />
+          <Route path="/redesign" element={<Redesign />} />
+          <Route path="/about" element={<About />} />
+        </Route>
+      </Routes>
+    </HashRouter>
   );
 }
-
-export default App;
