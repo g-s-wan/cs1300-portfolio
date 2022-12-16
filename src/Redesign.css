@@ -93,7 +93,7 @@ h4 {
   margin-top: -30px;
 }
 
-#take-me-there:hover {
+#take-me-there:hover, #take-me-there-btn:hover {
   background-color: rgba(232, 222, 130, 0.7);
   transition: 0.2s ease;
 }
